@@ -8,6 +8,7 @@ ul li {
 button {
   background: white;
   border: 0 none;
+  cursor: pointer;
 }
 
 #root {
@@ -43,6 +44,11 @@ button {
     flex: 1;
   }
 }
+
+.empty-wrap {
+  text-align: center;
+}
+
 .top-wrap {
   display: flex;
   justify-content: space-between;
@@ -56,13 +62,9 @@ button {
     }
   }
 }
-
 .todo-wrap {
   display: flex;
   flex-direction: column;
-  .no-data {
-    text-align: center;
-  }
   ul {
     display: flex;
     width: 100%;

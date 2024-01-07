@@ -1,6 +1,6 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
-export const countState = atom({
-  key: 'main/countState',
-  default: 0,
+export const todoFilterState = atom({
+  key: "main/todoFilterState",
+  default: "All",
 });
