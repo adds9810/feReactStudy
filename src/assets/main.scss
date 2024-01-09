@@ -33,8 +33,8 @@ button {
 
 [class*="wrap"] {
   margin-top: 10px;
-  padding-top: 30px;
-  border-top: 1px solid #ddd;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ddd;
 }
 
 .form-wrap {
@@ -49,43 +49,44 @@ button {
   text-align: center;
 }
 
-.top-wrap {
+.board-top {
   display: flex;
   justify-content: space-between;
-  ul {
-    display: flex;
-    gap: 15px;
-    li button {
-      &.active {
-        color: red;
-      }
+}
+.tab-list {
+  display: flex;
+  gap: 15px;
+  li button {
+    &.active {
+      color: red;
     }
   }
 }
-.todo-wrap {
+.board-bottom {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  ul {
+}
+.todo-list {
+  display: flex;
+  width: 100%;
+  li {
     display: flex;
     width: 100%;
-    li {
-      display: flex;
-      width: 100%;
-      gap: 10px;
-      label {
-        flex: 1 0 auto;
+    gap: 10px;
+    label {
+      flex: 1 0 auto;
+    }
+    button {
+      &.modify {
+        color: blue;
       }
-      button {
-        &.modify {
-          color: blue;
-        }
-        &.delete {
-          color: red;
-        }
+      &.delete {
+        color: red;
       }
-      .todo-modify {
-        display: none;
-      }
+    }
+    .todo-modify {
+      display: none;
     }
   }
 }
