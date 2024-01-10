@@ -8,13 +8,6 @@ interface filterListProps {
 }
 
 const FilterList = ({ todoFilter }: filterListProps) => {
-  //   return (
-  //     <ul className="tab-list">
-  //       {list.map((item, index) => {
-  //         <FilterItem key={item.value} value={item.value} label={item.label} />;
-  //       })}
-  //     </ul>
-  //   );
   return (
     <ul className="tab-list">
       {todoFilter.map(todo => (

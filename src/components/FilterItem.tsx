@@ -7,13 +7,13 @@ const FilterItem = ({ value, label }: FilterItemProps) => {
   return (
     <li>
       {
-        <button
-          className={todoState === value ? "active" : ""}
-          onClick={() => setTodoState(value)}
-        >
-          {label}
-        </button>
+        // <button
+        //   className={todoState === value ? "active" : ""}
+        //   onClick={() => setTodoState(value)}
+        // >
+        // </button>
       }
+      {label}
     </li>
   );
 };
