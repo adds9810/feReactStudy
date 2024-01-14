@@ -1,15 +1,14 @@
 interface todoItemProps {
   chk: boolean;
-  title: string;
   text: string;
 }
 
-const todoItem = ({ title, text, chk }: todoItemProps) => {
+const todoItem = ({ text, chk }: todoItemProps) => {
   return (
     <li>
-      <input type="checkbox" name="" id="" checked={chk} />
-      <label htmlFor="">
-        <strong>{title}</strong> {text}
+      <input type="checkbox" name={text} id="" checked={chk} />
+      <label htmlFor={text}>
+        {text}
         <input type="text" className="todo-modify" />
       </label>
 

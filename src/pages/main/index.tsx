@@ -18,9 +18,13 @@ export default () => {
   ]);
 
   const [todoList, setTodoList] = useState<listType[]>([
-    { chk: false, title: "할일1", text: "dd" },
-    { chk: false, title: "할일2", text: "dd" },
+    // { chk: false, text: "dd" },
+    // { chk: false, text: "dd" },
   ]);
+
+  const handleAddList = (list: listType) => {
+    setTodoList([...todoList, list]);
+  };
 
   useEffect(() => {
     console.log("count:", todoState);
@@ -32,7 +36,7 @@ export default () => {
   return (
     <div className="main">
       <h1>todo list</h1>
-      <Form />
+      <Form onAddList={handleAddList} />
       {todoList.length > 0 ? (
         <div className="board-wrap">
           <div className="board-top">

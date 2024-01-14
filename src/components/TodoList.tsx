@@ -1,7 +1,7 @@
 import TodoItem from "./TodoItem";
 interface todoListType {
+  id: number;
   chk: boolean;
-  title: string;
   text: string;
 }
 interface todoListProps {
@@ -12,12 +12,7 @@ const TodoList = ({ todoData }: todoListProps) => {
   return (
     <ul className="todo-list">
       {todoData.map(todo => (
-        <TodoItem
-          key={todo.title}
-          chk={todo.chk}
-          title={todo.title}
-          text={todo.text}
-        />
+        <TodoItem key={todo.id} chk={todo.chk} text={todo.text} />
       ))}
     </ul>
   );

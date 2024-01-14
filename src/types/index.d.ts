@@ -4,7 +4,7 @@ interface filterType {
 }
 
 interface listType {
+  id: number;
   chk: boolean;
-  title: string;
   text: string;
 }
