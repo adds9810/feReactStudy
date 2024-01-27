@@ -1,0 +1,30 @@
+#header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  .container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: flex-start;
+    h1 {
+      display: block;
+      width: 150px;
+      a,
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 30px;
+      li a {
+        color: #fff;
+      }
+    }
+  }
+}
