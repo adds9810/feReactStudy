@@ -4,7 +4,9 @@ import "./footer.scss";
 export default () => {
   return (
     <footer id="footer">
-      <p>Copyright © adds9810 All right reserved.</p>
+      <div className="container">
+        <p>Copyright © adds9810 All right reserved.</p>
+      </div>
     </footer>
   );
 };
