@@ -1,0 +1,53 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+  opacity: 0.5;
+  width: 30px;
+  height: 30px;
+  &.swiper-button-disabled {
+    display: none;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  &::after {
+    font-size: 30px;
+  }
+}
+.swiper-pagination {
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #fff;
+  }
+}
+
+.visualSlider {
+  min-width: auto;
+  position: relative;
+  padding-bottom: 34.5%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: rgb(255, 218, 218);
+  > div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  .swiper {
+    height: 100%;
+    overflow: visible;
+  }
+}
+
+.numberSlider {
+}
+
+.normalSlider {
+}
+
+.categorySlider {
+}
+
+.eventSlider {
+}
