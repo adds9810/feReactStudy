@@ -11,21 +11,32 @@ import "swiper/css/pagination";
 
 // style 구현
 import "./slider.scss";
+import { Link } from "react-router-dom";
 
+interface slideItem {
+  id: number;
+  newVal?: boolean;
+  name: string;
+  link: string;
+}
 interface props {
   slideName: string;
   slideView: number;
+  slideDate: slideItem[];
 }
 
 const Slider = (props: props) => {
+  const slideName = props.slideName,
+    slideView = props.slideView,
+    slideDate = props.slideDate;
   return (
-    <div className={props.slideName}>
+    <div className={slideName}>
       <div>
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, A11y]}
           spaceBetween={8}
-          slidesPerView={props.slideView}
+          slidesPerView={slideView}
           navigation
           loop={false}
           pagination={{ clickable: true }}
@@ -33,16 +44,16 @@ const Slider = (props: props) => {
           // onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
-          <SwiperSlide>
-            {({ isActive }) => (
-              <div>
-                Slide 1, Current slide is {isActive ? "active" : "not active"}
-              </div>
-            )}
-          </SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
+          {slideDate.map(item => (
+            <SwiperSlide key={item.id}>
+              {/* {({ isActive }) => ( */}
+              <Link to={item.link}>
+                {item.name}
+                {/* {isActive ? "active" : "not active"} */}
+              </Link>
+              {/* )} */}
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
