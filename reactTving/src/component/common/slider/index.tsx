@@ -47,10 +47,7 @@ const Slider = (props: props) => {
           {slideDate.map(item => (
             <SwiperSlide key={item.id}>
               {/* {({ isActive }) => ( */}
-              <Link to={item.link}>
-                {item.name}
-                {/* {isActive ? "active" : "not active"} */}
-              </Link>
+              <Link to={item.link}>{item.name}</Link>
               {/* )} */}
             </SwiperSlide>
           ))}
