@@ -28,6 +28,7 @@
   }
 }
 
+// 메인 슬라이더 
 .visualSlider {
   min-width: auto;
   position: relative;
@@ -67,12 +68,11 @@
   }
 }
 
-.numberSlider {
-}
-
+// 일반 슬라이더
 .normalSlider {
 }
 
+// 카테고리 슬라이더
 .cateSlider {
   margin-top: 80px;
   min-width: auto;
@@ -116,6 +116,7 @@
   }
 }
 
+// 순위 슬라이더 
 .rankSlider {
   margin-top: 20px;
   min-width: auto;
