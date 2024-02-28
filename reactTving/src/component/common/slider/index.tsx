@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 interface slideItem {
   id: number;
   name: string;
-  viewingGrade?:number;
+  viewingGrade?: number;
   imgUrl?: string;
   newVal?: boolean;
   subtitleVal?: boolean;
@@ -38,42 +38,49 @@ const Slider = (props: props) => {
     slideView = props.slideView,
     slideDate = props.slideDate;
 
-    // slide Opt
+  // slide Opt
   const [instance, setInstance] = useState<SwiperClass | null>(null);
   const swiperElRef = useRef<SwiperRef>(null);
   useEffect(() => {
-    instance?.slideTo(2)
+    instance?.slideTo(2);
     // ref usage
     console.log(swiperElRef.current?.swiper.activeIndex);
-  }, [])
+  }, []);
   return (
     <div className={slideName}>
-      <div> 
+      <div>
         {slideDate ? (
-        <Swiper
-          // install Swiper modules
-          modules={[Navigation, Pagination, A11y]}
-          spaceBetween={8}
-          slidesPerView={slideView}
-          navigation
-          loop={false}
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-          onSwiper={setInstance}
-          onSlideChange={() => console.log("slide change")}
-          ref={swiperElRef}
-        >
-          {slideDate.map(item => (
-            <SwiperSlide key={item.id}>
-              {/* {({ isActive }) => ( */}
-              <Link to={item.link}>{item.name}</Link>
-              {/* )} */}
-            </SwiperSlide>
-          ))}
-        </Swiper>): (
-    
-    <Empty />
-      )}
+          <Swiper
+            // install Swiper modules
+            modules={[Navigation, Pagination, A11y]}
+            spaceBetween={8}
+            slidesPerView={slideView}
+            navigation
+            loop={false}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            onSwiper={setInstance}
+            onSlideChange={() => console.log("slide change")}
+            ref={swiperElRef}
+          >
+            {slideName === "rankSlider"
+              ? slideDate.map((item, index) => (
+                  <SwiperSlide key={item.id}>
+                    {index + 1} <Link to={item.link}>{item.name}</Link>
+                    {/* )} */}
+                  </SwiperSlide>
+                ))
+              : slideDate.map(item => (
+                  <SwiperSlide key={item.id}>
+                    {/* {({ isActive }) => ( */}
+                    <Link to={item.link}>{item.name}</Link>
+                    {/* )} */}
+                  </SwiperSlide>
+                ))}
+          </Swiper>
+        ) : (
+          <Empty />
+        )}
       </div>
     </div>
   );
