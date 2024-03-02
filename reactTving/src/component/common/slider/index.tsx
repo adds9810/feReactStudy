@@ -66,14 +66,55 @@ const Slider = (props: props) => {
             {slideName === "rankSlider"
               ? slideDate.map((item, index) => (
                   <SwiperSlide key={item.id}>
-                    {index + 1} <Link to={item.link}>{item.name}</Link>
+                    <Link to={item.link} className="slideContent">
+                      <div className="slideNum">{index + 1}</div>
+                      <div className="slideConteBox">
+                        <div className="slideName">{item.name}</div>
+                        <img
+                          src={require(`~/assets/images/${item.imgUrl}`)}
+                          alt={item.name}
+                        />
+                      </div>
+                    </Link>
+                    {/* )} */}
+                  </SwiperSlide>
+                ))
+              : slideName === "normalSlider viewName"
+              ? slideDate.map(item => (
+                  <SwiperSlide key={item.id}>
+                    {/* {({ isActive }) => ( */}
+                    <Link to={item.link} className="slideContent">
+                      <div className="slideConteBox">
+                        {item.imgUrl ? (
+                          <img
+                            src={require(`~/assets/images/${item.imgUrl}`)}
+                            alt={item.name}
+                          />
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                      <div className="slideName">{item.name}</div>
+                    </Link>
                     {/* )} */}
                   </SwiperSlide>
                 ))
               : slideDate.map(item => (
                   <SwiperSlide key={item.id}>
                     {/* {({ isActive }) => ( */}
-                    <Link to={item.link}>{item.name}</Link>
+                    <Link to={item.link} className="slideContent">
+                      <div className="slideConteBox">
+                        <div className="slideName">{item.name}</div>
+                        {item.imgUrl ? (
+                          <img
+                            src={require(`~/assets/images/${item.imgUrl}`)}
+                            alt={item.name}
+                          />
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                    </Link>
                     {/* )} */}
                   </SwiperSlide>
                 ))}
